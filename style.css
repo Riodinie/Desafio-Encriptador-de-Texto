@@ -1,26 +1,12 @@
 :root {
-  --primary-color: #0A3871;
-  --bg-color: #E5E5E5;
+  --primary-color: #0a3871;
+  --bg-color: #e5e5e5;
   --light-bg-color: #fff;
   --text-color-one: #111116;
-  --text-color-two: #0A3871;
+  --text-color-two: #0a3871;
   --light-text-color: #cdccd1;
   --primary-text-color: #fff;
-  --light-hover-color:  #D8DFE8;
-}
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  border-radius: 30px;
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 30px;
-  background: var(--primary-color);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bg-color);
+  --light-hover-color: #d8dfe8;
 }
 
 * {
@@ -30,6 +16,10 @@
   font-family: "Poppins", sans-serif;
 }
 body {
+  background-color: var(--bg-color);
+}
+
+.body {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -38,6 +28,21 @@ body {
   background-color: var(--bg-color);
 }
 
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  height: 40px;
+  margin-left: 20px;
+}
+.header-text {
+  font-size: 24px;
+  color: var(--text-color-one);
+  font-weight: 800;
+}
 .container {
   position: relative;
   width: 1200px;
@@ -83,7 +88,7 @@ body {
   transition: all 0.3s;
 }
 
-.btntop-body:hover{
+.btntop-body:hover {
   background-color: var(--light-hover-color);
 }
 
@@ -120,7 +125,6 @@ body {
 .container .text-area .alert {
   bottom: 0;
   right: 0;
-  position: absolute;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -128,11 +132,28 @@ body {
   color: var(--text-color-one);
 }
 
-.alert  ion-icon{
- font-size: 1.2rem;
- margin-right: 5px;
- vertical-align: text-bottom;
+.alert ion-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  vertical-align: text-bottom;
 }
+
+.buttons {
+  text-align: right;
+}
+
+.buttons ion-icon {
+  font-size: 1.2rem;
+  color: var(--text-color-one);
+  padding: 5px;
+  margin: 5px;
+}
+
+.buttons ion-icon:hover {
+  background-color: var(--light-hover-color);
+  border-radius: 50%;
+}
+
 .container .center {
   position: relative;
 }
@@ -209,7 +230,14 @@ body {
   color: var(--primary-text-color);
   background-color: var(--primary-color);
 }
-
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  text-align: center;
+}
 
 /* media quiries */
 @media (max-width: 800px) {

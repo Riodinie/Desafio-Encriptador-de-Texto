@@ -8,68 +8,87 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="style.css" />
-  <title>Language Translater</title>
+  <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+  <title>Encriptador de Texto</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="card input-wrapper">
-      <div class="from">
-        <div class="btntop-container" id="Enc" style="cursor: pointer;">
-          <div class="btntop-body" style="border: 1px solid #0A3871;">
-            <ion-icon name="lock-closed-outline"></ion-icon>
-            <span>Encriptar</span>
-          </div>
-        </div>
-        <div class="btntop-container" id="Des" style="cursor: pointer;">
-          <div class="btntop-body" style="border: 1px solid #0A3871;">
-            <ion-icon name="lock-open-outline"></ion-icon>
-            <span>Desencriptar</span>
-          </div>
-        </div>
-      </div>
-      <div class="text-area">
-        <textarea id="input-text" cols="30" rows="10" placeholder="Ingresa el texto que desees encriptar o desencriptar."></textarea>
-        <div class="alert"><ion-icon name="alert-circle-outline"></ion-icon><span id="input-alert">Solo letras minúsculas y sin acentos.</div>
-      </div>
-      <div class="card-bottom">
-        <p>¡O elige tu documento!</p>
-        <label for="upload-document">
-          <span id="upload-title">Seleccione Archivo</span>
-          <ion-icon name="cloud-upload-outline"></ion-icon>
-          <input type="file" id="upload-document" hidden />
-        </label>
-      </div>
-    </div>
+  <header>
+    <a href="#" rel="">
+      <img src="img/logo.svg" alt="Logo Alura" class="logo">
+    </a>
+    <div class="header-text">Alura Latam</div>
+  </header>
 
-    <div class="center">
-      <div class="swap-position">
-        <ion-icon name="swap-horizontal-outline"></ion-icon>
-      </div>
-    </div>
-
-    <div class="card output-wrapper">
-      <div class="to">
-        <div class="btntop-container" id="output-language">
-          <div class="btntop-body" style="background-color: #D8DFE8;">
-            <span class="selected" style="text-align: center;">Resultado</span>
+  <div class="body">
+    <div class="container">
+      <div class="card input-wrapper">
+        <div class="from">
+          <div class="btntop-container" id="Enc" style="cursor: pointer;">
+            <div class="btntop-body" style="border: 1px solid #0A3871;">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <span>Encriptar</span>
+            </div>
+          </div>
+          <div class="btntop-container" id="Des" style="cursor: pointer;">
+            <div class="btntop-body" style="border: 1px solid #0A3871;">
+              <ion-icon name="lock-open-outline"></ion-icon>
+              <span>Desencriptar</span>
+            </div>
           </div>
         </div>
+        <div class="text-area">
+          <textarea id="input-text" cols="30" rows="10"
+            placeholder="Ingresa el texto que desees encriptar o desencriptar."></textarea>
+          <div class="alert"><ion-icon name="alert-circle-outline"></ion-icon><span id="input-alert">Solo letras
+              minúsculas y sin acentos.</div>
+        </div>
+        <div class="card-bottom">
+          <p>¡O elige tu documento!</p>
+          <label for="upload-document">
+            <span id="upload-title">Seleccione Archivo</span>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+            <input type="file" id="upload-document" hidden />
+          </label>
+        </div>
       </div>
-      <textarea id="output-text" cols="30" rows="10" placeholder="Ningún mensaje fue encontrado" disabled></textarea>
-      <div class="card-bottom">
-        <p>¡Descárgalo como documento!</p>
-        <button id="download-btn">
-          <span>Descargar</span>
-          <ion-icon name="cloud-download-outline"></ion-icon>
-        </button>
+
+      <div class="center">
+        <div class="swap-position">
+          <ion-icon name="swap-horizontal-outline"></ion-icon>
+        </div>
       </div>
+
+      <div class="card output-wrapper">
+        <div class="to">
+          <div class="btntop-container" id="output-language">
+            <div class="btntop-body" style="background-color: #D8DFE8;">
+              <span class="selected" style="text-align: center;">Resultado</span>
+            </div>
+          </div>
+        </div>
+        <textarea id="output-text" cols="30" rows="10" placeholder="Ningún mensaje fue encontrado" disabled></textarea>
+        <div class="buttons"><ion-icon style="visibility: hidden;" class="btn-copy" name="copy-outline"></ion-icon>
+        </div>
+        <div class="card-bottom">
+          <p>¡Descárgalo como documento!</p>
+          <button id="download-btn">
+            <span>Descargar</span>
+            <ion-icon name="cloud-download-outline"></ion-icon>
+          </button>
+        </div>
       </div>
     </div>
   </div>
   <div>
   </div>
   <script src="script.js"></script>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <p>&copy;2024 - Encriptador de Texto - Hecho por Monica Plata Ricaurte</p>
+    </div>
+  </footer>
 </body>
 
 </html>
