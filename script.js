@@ -8,7 +8,6 @@ const outputText = document.querySelector("#output-text");
 const btnDecrypt = document.querySelector("#Des");
 const btnCopy = document.querySelector(".btn-copy");
 
-
 swapBtn.addEventListener("click", (e) => {
     const tempInputText = inputTextElem.value;
     inputTextElem.value = outputTextElem.value;
@@ -80,7 +79,6 @@ btnDecrypt.addEventListener("click", (e) => {
     }
 });
 
-
 btnCopy.addEventListener("click", (e) => {
     e.preventDefault();
     const textToCopy = outputText.textContent;
@@ -90,5 +88,56 @@ btnCopy.addEventListener("click", (e) => {
         alert ("Error al copiar el texto.");
     });
 });
+
+const uploadDocument = document.querySelector("#upload-document"),
+  uploadTitle = document.querySelector("#upload-title");
+
+uploadDocument.addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (
+        file.type === "application/pdf" ||
+        file.type === "text/plain" ||
+        file.type === "application/msword" ||
+        file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ) {
+        uploadTitle.innerHTML = file.name;
+
+        const reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = async (e) => {
+            try {
+                const content = e.target.result;
+                const encryptedContent = encryptText(content);
+                outputText.innerHTML = encryptedContent;
+                btnCopy.style.visibility = "inherit";
+            } catch (error) {
+                console.error("Error al procesar el archivo:", error);
+            }
+        };
+    } else {
+        alert("Por favor, sube un archivo válido.");
+    }
+});
+
+const downloadBtn = document.querySelector("#download-btn");
+
+downloadBtn.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    const outputText = outputTextElem.value; 
+    const currentDate = new Date().toISOString().slice(0,10); 
+    const filename = `Archivo-${currentDate}.txt`; 
+    
+    if (outputText) {
+      const blob = new Blob([outputText], { type: "text/plain" }); 
+      const url = URL.createObjectURL(blob); 
+      
+      const a = document.createElement("a"); 
+      a.download = filename; 
+      a.href = url; 
+      document.body.appendChild(a); 
+      a.click();
+      document.body.removeChild(a); 
+    }
+  });
 
 
