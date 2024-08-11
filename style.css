@@ -31,8 +31,9 @@ header {
   padding: 10px;
 }
 .logo {
-  height: 40px;
+  height: 60px;
   margin-left: 20px;
+  margin-right: 10px;
 }
 .header-text {
   font-size: 24px;
